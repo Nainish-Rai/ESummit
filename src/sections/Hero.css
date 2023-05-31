@@ -1,0 +1,15 @@
+.Hero{
+    background-image: url("../assets/rocketbg.png");
+    background-size: cover;
+    background-position-y: bottom;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .Hero {
+      background-position-x: 80%;
+      background-size: 200%;
+      background-position-y: center;
+      background-repeat: no-repeat;
+    }
+  }
