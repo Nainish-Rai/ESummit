@@ -9,7 +9,7 @@ function Hero() {
       <Navbar />
       <main className=" max-w-7xl w-full mx-auto flex md:flex flex-col mt-12 px-2">
         <div className="left  mt-12">
-          <h1 className="spacefont text-6xl  leading-relaxed">
+          <h1 className="spacefont text-4xl lg:text-6xl  leading-relaxed">
             Startup <br /> Registration
           </h1>
           <Text className="max-w-xl mt-8">
