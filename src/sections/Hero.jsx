@@ -1,4 +1,4 @@
-import Navbar from "../containers/navbar";
+import Navbar from "../containers/Navbar";
 import { Text } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 
