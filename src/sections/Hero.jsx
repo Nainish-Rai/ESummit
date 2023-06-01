@@ -9,9 +9,10 @@ function Hero() {
       <Navbar />
       <main className=" max-w-7xl w-full mx-auto flex md:flex flex-col mt-12 px-2">
         <div className="left  mt-12">
-          <h1 className="spacefont text-4xl lg:text-6xl  leading-relaxed">
-            Startup <br /> Registration
+          <h1 className="spacefont text-4xl lg:text-6xl ">
+            Startup <br /> 
           </h1>
+          <h1 className="spacefont text-4xl lg:text-6xl mt-10">Registartion</h1>
           <Text className="max-w-xl mt-8">
             E-Summit&apos;23 is a convention of budding entrepreneurs,
             innovators, and investors which includes competitions, workshops,
