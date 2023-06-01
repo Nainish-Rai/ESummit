@@ -6,7 +6,7 @@ import Hero from "./sections/Hero";
 
 function App() {
   return (
-    <div className="app bg-black text-gray-200 w-full mx-auto lg:px-12 xl:px-4 px-4">
+    <div className="app bg-black text-gray-200 w-full mx-auto lg:px-12 xl:px-0 px-4">
       <Hero />
       <Details />
       <FormSection />
