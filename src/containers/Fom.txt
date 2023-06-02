@@ -1,0 +1,128 @@
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Founder&apos;s Name <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="FoundersName"
+  value={formData.FoundersName}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Email Address <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Email_Address"
+  value={formData.Email_Address}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Contact Number<span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Contact_Number"
+  value={formData.Contact_Number}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Which city is your startup based in?{" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Which_city_is_your_startup_based_in"
+  value={formData.Which_city_is_your_startup_based_in}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Mention your Startup website. (Mention NA, if not applicable.){" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Mention_your_Startup_website"
+  value={formData.Mention_your_Startup_website}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  What is your Target Customer and Market Size?{" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="What_is_your_Target_Customer_and_Market_Size"
+  value={formData.What_is_your_Target_Customer_and_Market_Size}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  What is your Primary Revenue Stream?{" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="What_is_your_Primary_Revenue_Stream"
+  value={formData.What_is_your_Primary_Revenue_Stream}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Mention any two close competitors of your Startup{" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Mention_any_two_close_competitors_of_your_Startup"
+  value={formData.Mention_any_two_close_competitors_of_your_Startup}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  Can you provide a brief description about your Startup,
+  Product and the need/gap being addressed?{" "}
+  <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="Can_you_provide_a_brief_description_about_your_Startup_Product_and_the_need_being_addressed"
+  value={formData.Can_you_provide_a_brief_description_about_your_Startup_Product_and_the_need_being_addressed}
+  onChange={handleChange}
+/>
+</div>
+<div className="md:w-1/2 w-full lg:px-6  py-2">
+<label className="  text-sm text-gray-900">
+  What are some of the challenges you are facing with your
+  Startup? <span className=" text-red-500">*</span>
+</label>
+<input
+  className="rounded-lg border text-black my-1 p-2 w-full"
+  type="text"
+  name="What_are_some_of_the_challenges_you_are_facing_with_your_Startup?"
+  value={formData.What_are_some_of_the_challenges_you_are_facing_with_your_Startup}
+  onChange={handleChange}
+/>
+</div>
