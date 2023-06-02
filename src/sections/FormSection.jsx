@@ -1,21 +1,58 @@
 import formbanner from "../assets/formbanner.png";
 import { Heading } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
-import {
-  FormControl,
-  FormLabel,
-  // FormErrorMessage,
-  // FormHelperText,
-} from "@chakra-ui/react";
+import { useState } from "react";
+import // FormControl,
+// FormLabel,
+// FormErrorMessage,
+// FormHelperText,
+"@chakra-ui/react";
 // import { useState } from "react";
 function FormSection() {
-  // const [input, setInput] = useState("");
+  const [formData, setFormData] = useState({
+    Name_of_your_startup: "",
+    founders_name: "",
+    Email_Address: "",
+    Contact_Number: "",
+    Which_city_is_your_startup_based_in: "",
+    Mention_your_Startup_website: "",
+    What_is_your_Target_Customer_and_Market_Size: "",
+    What_is_your_Primary_Revenue_Stream: "",
+    Mention_any_two_close_competitors_of_your_Startup: "",
+    Can_you_provide_a_brief_description_about_your_Startup_Product_and_the_need_being_addressed:
+      "",
+    What_are_some_of_the_challenges_you_are_facing_with_your_Startup: "",
+  });
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  // const handleInputChange = (e) => setInput(e.target.value);
+    console.log("clicked");
+    // Send a POST request to the server
+    fetch("http://localhost:3000/form", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+        // Handle the server response
+      })
+      .catch((error) => {
+        console.error(error);
+        // Handle the error
+      });
+  };
 
-  // const isError = input === "";
+  const handleChange = (e) => {
+    console.log(e.target.name);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   return (
-    <div className="max-w-7xl w-full mx-auto flex md:flex flex-col mt-32 rounded-lg overflow-hidden bg-gray-200">
+    <div className="max-w-7xl w-full mx-auto flex md:flex flex-col mt-32 rounded-lg overflow-hidden bg-white">
       <img src={formbanner} alt="formbanner" />
       <div className="w-full">
         <Heading
@@ -27,231 +64,168 @@ function FormSection() {
         >
           REGISTRATION FORM
         </Heading>
-        <div className="mt-20 px-10 w-full flex items-center">
+        <div className="mt-20 lg:px-10 px-5 w-full flex items-center">
           <div className="mx-auto w-full max-w-5xl flex flex-wrap">
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Name of your startup
-                </FormLabel>
+            <form className="w-full" onSubmit={handleSubmit}>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Name of your startup <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Name_of_your_startup "
+                  value={formData.Name_of_your_startup}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Founder Name
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                Founder&apos;s Name <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="founders_name"
+                  value={formData.founders_name}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Email Address
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Email Address <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Email_Address"
+                  value={formData.Email_Address}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Contact Number
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Contact Number<span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Contact_Number"
+                  value={formData.Contact_Number}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Which city is your startup based in?
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Which city is your startup based in?{" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Which_city_is_your_startup_based_in"
+                  value={formData.Which_city_is_your_startup_based_in}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  Mention your Startup website. Mention NA, if not applicable
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Mention your Startup website. (Mention NA, if not applicable.){" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Mention_your_Startup_website"
+                  value={formData.Mention_your_Startup_website}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  What is your Target Customer and Market Size?
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  What is your Target Customer and Market Size?{" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="What_is_your_Target_Customer_and_Market_Size"
+                  value={formData.What_is_your_Target_Customer_and_Market_Size}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  What is your Primary Revenue Stream?
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  What is your Primary Revenue Stream?{" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="What_is_your_Primary_Revenue_Stream"
+                  value={formData.What_is_your_Primary_Revenue_Stream}
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
-                  What is your Primary Revenue Stream?* Mention any two close
-                  competitors of your Startup*
-                </FormLabel>
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
+                  Mention any two close competitors of your Startup{" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Mention_any_two_close_competitors_of_your_Startup"
+                  value={
+                    formData.Mention_any_two_close_competitors_of_your_Startup
+                  }
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
                   Can you provide a brief description about your Startup,
-                  Product and the need/gap being addressed?
-                </FormLabel>
+                  Product and the need/gap being addressed?{" "}
+                  <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="Can_you_provide_a_brief_description_about_your_Startup_Product_and_the_need_being_addressed"
+                  value={
+                    formData.Can_you_provide_a_brief_description_about_your_Startup_Product_and_the_need_being_addressed
+                  }
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired className="">
-                <FormLabel className=" text-gray-800 text-xs ">
+              </div>
+              <div className="md:w-1/2 w-full lg:px-6  py-2">
+                <label className="  text-sm text-gray-900">
                   What are some of the challenges you are facing with your
-                  Startup?
-                </FormLabel>
+                  Startup? <span className=" text-red-500">*</span>
+                </label>
                 <input
-                  type="email"
-                  className="rounded-lg border text-black p-2 w-full"
-                  // onChange={handleInputChange}
+                  className="rounded-lg border text-black my-1 p-2 w-full"
+                  type="text"
+                  name="What_are_some_of_the_challenges_you_are_facing_with_your_Startup?"
+                  value={
+                    formData.What_are_some_of_the_challenges_you_are_facing_with_your_Startup
+                  }
+                  onChange={handleChange}
                 />
-              </FormControl>
-            </div>
+              </div>
 
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired>
-                <FormLabel className=" text-black  text-xs font-thin">
-                  At what stage are you in your Startup Journey?
-                </FormLabel>
-                <select
-                  className="bg-white w-full p-2 rounded text-black"
-                  placeholder="Select country"
-                >
-                  <option value="Ideation">Ideation</option>
-                  <option value="MVP Ready (POC / Evaluation underway - not paid)">
-                    MVP Ready (POC / Evaluation underway - not paid)
-                  </option>
-                  <option value="Customer Pilots Underways (Paid POC)">
-                    Customer Pilots Underways (Paid POC)
-                  </option>
-                  <option value="Early Revenue (First set of paid customers on-board)">
-                    Early Revenue (First set of paid customers on-board)
-                  </option>
-                  <option value="Early Scale (GTM and target market validated, now looking to scale)">
-                    Early Scale (GTM and target market validated, now looking to
-                    scale)
-                  </option>
-                  <option value="Scaling (Proven GTM with scaled customers, now going national or global)">
-                    Scaling (Proven GTM with scaled customers, now going
-                    national or global)
-                  </option>
-                </select>
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired>
-                <FormLabel className=" text-black  text-xs font-thin">
-                  Which event do you want to register for?
-                </FormLabel>
-                <select
-                  className="bg-white w-full p-2 rounded text-black"
-                  placeholder="Select country"
-                >
-                  <option value="Ideascape">Ideascape</option>
-                  <option value="Get Funded">Get Funded</option>
-                </select>
-              </FormControl>
-            </div>
-            <div className="lg:w-1/2 w-full px-6 py-2">
-              <FormControl isRequired>
-                <FormLabel className=" text-black  text-xs font-thin">
-                  What domain is your startup in?
-                </FormLabel>
-                <select
-                  className="bg-white w-full p-2 rounded text-black"
-                  placeholder="Select country"
-                >
-                  <option value="Healthcare/Pharma/Lifesciences">
-                    Healthcare/Pharma/Lifesciences
-                  </option>
-                  <option value="Finance/Insurance/Fintech">
-                    Finance/Insurance/Fintech
-                  </option>
-                  <option value="Manufacturing/Industrial">
-                    Manufacturing/Industrial
-                  </option>
-                  <option value="Retail/Sales&amp;Marketing">
-                    Retail/Sales&amp;Marketing
-                  </option>
-                  <option value="Deep technology (domain neutral) / AI">
-                    Deep technology (domain neutral) / AI
-                  </option>
-                  <option value="Agriculture/FoodTech">
-                    Agriculture/FoodTech
-                  </option>
-                  <option value="FMCG">FMCG</option>
-                  <option value="EduTech">EduTech</option>
-                  <option value="Drone">Drone</option>
-                  <option value="AR/VR">AR/VR</option>
-                  <option value="IOT">IOT</option>
-                  <option value="Other">Other</option>
-                </select>
-              </FormControl>
-            </div>
+              <Button
+                colorScheme="orange"
+                type="submit"
+                fontFamily="Esoris"
+                size="lg"
+              >
+                Register
+              </Button>
+            </form>
           </div>
         </div>
-        <div className="w-full flex justify-center my-8">
-          <Button colorScheme="orange" fontFamily="Esoris" size="lg">
-            Register
-          </Button>
-        </div>
+        <div className="w-full flex justify-center my-8"></div>
       </div>
     </div>
   );

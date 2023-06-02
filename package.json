@@ -13,7 +13,10 @@
     "@chakra-ui/react": "^2.7.0",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
     "framer-motion": "^10.12.16",
+    "mongoose": "^7.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -29,5 +32,18 @@
     "postcss": "^8.4.24",
     "tailwindcss": "^3.3.2",
     "vite": "^4.3.9"
-  }
+  },
+  "main": "postcss.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nainish-Rai/ESummit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nainish-Rai/ESummit/issues"
+  },
+  "homepage": "https://github.com/Nainish-Rai/ESummit#readme",
+  "description": ""
 }

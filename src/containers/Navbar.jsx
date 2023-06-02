@@ -7,10 +7,10 @@ function Navbar() {
         <img src={esummlogo} alt="logoesummit" width="40px" className=" aspect-square"/>
       </div>
       <div>
-        <ul className="flex items-center justify-between gap-6" >
+        <ul className="flex items-center justify-between gap-4" >
             <li className="spacefont">Events</li>
-            <li className="spacefont">Sponsor</li>
-            <li className="spacefont">Faqs</li>
+            <li className="spacefont">Sponsors</li>
+            <li className="spacefont">Faq</li>
             <img src={ecelllogo} width="40px" className=" aspect-square" alt="ecelllogo" />
         </ul>
       </div>
