@@ -22,7 +22,7 @@ function Hero() {
           </Text>
           <div className="mt-12 flex gap-6 flex-wrap">
             <Button colorScheme="orange" fontFamily="Esoris" size="md">
-              <a href="">ss</a> Register Now
+              Register Now
             </Button>
             <Button
               className=" hover:bg-white/10"
